@@ -60,7 +60,7 @@ class _LoginPageState extends State<LoginPage> {
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
-        title: const Text('Solaris',
+        title: const Text('Windwise',
         style: TextStyle(color: Colors.black),
         ),
         backgroundColor:Color.fromRGBO(221, 255, 187, 1),
@@ -79,7 +79,7 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 const Center(
                   child: Text(
-                    "Solaris",
+                    "Windwise",
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 42,

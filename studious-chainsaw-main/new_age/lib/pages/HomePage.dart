@@ -118,6 +118,13 @@ class HomePage extends StatelessWidget {
             const SizedBox(
               height: 16,
             ),
+            Text('Types of windwill',
+          
+            style: TextStyle(
+              
+              color: Colors.green
+            ),
+            ),
             Container(
               height: 350,
               child: Align(
@@ -126,10 +133,7 @@ class HomePage extends StatelessWidget {
                   children:  [
                     MillInfo(millname: "Vertical mill",millinfo: "this is the info page\nwhich has basic info\ngod just kill me" , imagePath: "assets/vaxi.gif", page: ProfilePage()),
                     MillInfo(millname: "Vertical mill",millinfo: "this is the info page\nwhich has basic info\ngod just kill me" , imagePath: "assets/vaxi.gif", page: ProfilePage()),
-                    MillInfo(millname: "Vertical mill",millinfo: "this is the info page\nwhich has basic info\ngod just kill me" , imagePath: "assets/vaxi.gif", page: ProfilePage()),
-
-
-            
+                    MillInfo(millname: "Vertical mill",millinfo: "this is the info page\nwhich has basic info\ngod just kill me" , imagePath: "assets/vaxi.gif", page: ProfilePage()),            
                   ],
                 ),
               ),
