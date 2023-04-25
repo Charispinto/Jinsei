@@ -59,7 +59,7 @@ class _LandingPageState extends State<LandingPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       
-      appBar: AppBar(title: const Text("Solaris",
+      appBar: AppBar(title: const Text("Windwise",
       style: TextStyle(
         color: Colors.black,
       ),
