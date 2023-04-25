@@ -58,13 +58,6 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-      //   elevation: 0,
-      //   title: const Text('Windwise',
-      //   style: TextStyle(color: Colors.black),
-      //   ),
-      //   backgroundColor:Color.fromRGBO(221, 255, 187, 1),
-      // ),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 80),
