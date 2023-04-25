@@ -33,7 +33,7 @@ Future<String?> getData() async{
 }
 
   
-  String? windspeed = 'to be calculated'; 
+  String windspeed = "0.0"; 
   var temp;
   var speed;
 
@@ -42,34 +42,50 @@ Future<String?> getData() async{
     return Scaffold(
       appBar: AppBar(title: Text("api1 to get wind data")),
 
-      body: Column(children: [
-        const SizedBox(height: 50,),
-        TextButton(onPressed: () async{
-          temp = await getData();
-          windspeed = temp.toString();
-         print('$windspeed');
-         setState(() {
-           windspeed;
-         });
-        }, child: Text("get wind speed")), 
+      body: Center(
+        child: Column(children: [   
+          const SizedBox(height: 50,),   
+          //dont touch this code 
+          Text("$windspeed m/s",
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 60,
+            color: Colors.amber
+          ),
+          ),
 
-        const SizedBox(height: 40,),
+          const SizedBox(height: 50,),
 
-        Text("$windspeed"),
-
-        TextButton(onPressed: (){
-         nextScreenReplace(context, LandingPage());
-        },
-         child: Text("return back to map page"),
-         ),
-
-
-        TextButton(onPressed: (){
-         speed = double.parse("$windspeed");
-         nextScreenReplace(context, MyWidget(windspeed: speed));
-        },
-         child: Text('predict energy generation'))
-      ]),
+          Container(
+            child: TextButton(onPressed: () async{
+              temp = await getData();
+              windspeed = temp.toString() ;
+             print('$windspeed');
+             setState(() {
+               windspeed;
+             });
+            }, child: Text("get wind speed")),
+          ), 
+      
+         
+      
+          
+          //dont touch this code
+          TextButton(onPressed: (){
+           nextScreenReplace(context, LandingPage());
+          },
+           child: Text("return back to map page"),
+           ),
+      
+          //don't touch this code
+          TextButton(onPressed: (){
+           speed = double.parse("$windspeed");
+           nextScreenReplace(context, MyWidget(windspeed: speed));
+          },
+           child: Text('predict energy generation'))
+        ]
+        ),
+      ),
     );
   }
 }

@@ -59,9 +59,17 @@ class _LandingPageState extends State<LandingPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Solaris")),
+      
+      appBar: AppBar(title: const Text("Solaris",
+      style: TextStyle(
+        color: Colors.black,
+      ),
+      ),
+      elevation: 0,
+       backgroundColor:Color.fromRGBO(221, 255, 187, 1),
+      ),
 
-       drawer: Drawer(
+       drawer: Drawer(    
           backgroundColor:const Color.fromARGB(225, 255, 255, 255),
           child: ListView(
             padding: const EdgeInsets.symmetric(vertical: 50),
@@ -151,26 +159,33 @@ class _LandingPageState extends State<LandingPage> {
 
 
       
-        bottomNavigationBar: BottomNavigationBar(
-          items: const [
-            BottomNavigationBarItem(
-              icon: Icon(
-                Icons.home,
-                color: Colors.grey,
+        bottomNavigationBar: Theme(
+          data: ThemeData(
+            canvasColor: Colors.green[400]
+          ),
+          child: BottomNavigationBar(
+            backgroundColor: Color.fromARGB(255, 76, 175, 80),
+                      
+            items: const [
+              BottomNavigationBarItem(
+                icon: Icon(
+                  Icons.home,
+                  color: Colors.grey,
+                ),
+                label: "home",
               ),
-              label: "home",
-            ),
-            BottomNavigationBarItem(icon: Icon(Icons.map), label: "maps"),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.local_hospital),
-              label: "hospital",
-            ),
-          ],
-          type: BottomNavigationBarType.shifting,
-          currentIndex: _selectedIndex,
-          selectedItemColor: Colors.grey,
-          onTap: _onItemTapped,
-          elevation: 0,
+              BottomNavigationBarItem(icon: Icon(Icons.map), label: "maps"),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.local_hospital),
+                label: "hospital",
+              ),
+            ],
+            type: BottomNavigationBarType.shifting,
+            currentIndex: _selectedIndex,
+            selectedItemColor: Colors.grey,
+            onTap: _onItemTapped,
+            elevation: 0,
+          ),
         ),
 
 
@@ -180,6 +195,6 @@ class _LandingPageState extends State<LandingPage> {
 
 
       );    
-  
+
   }
 }

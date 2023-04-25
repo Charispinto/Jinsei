@@ -59,8 +59,11 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Solaris'),
-        backgroundColor: Colors.black87,
+        elevation: 0,
+        title: const Text('Solaris',
+        style: TextStyle(color: Colors.black),
+        ),
+        backgroundColor:Color.fromRGBO(221, 255, 187, 1),
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -155,7 +158,7 @@ class _LoginPageState extends State<LoginPage> {
                   width: double.infinity,
                   child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.black87,
+                        backgroundColor: Color.fromRGBO(164, 188, 146, 1),
                       ),
                       onPressed: () {
                         // add the sigin in function
@@ -166,6 +169,7 @@ class _LoginPageState extends State<LoginPage> {
                         style: TextStyle(
                           // add style to the sigin in button
                           fontSize: 16,
+                          color: Colors.black,
                         ),
                       )),
                 ),
@@ -178,7 +182,7 @@ class _LoginPageState extends State<LoginPage> {
                       TextSpan(
                         text: "Register here",
                         style: const TextStyle(
-                          color: Colors.black,
+                          color: Color.fromRGBO(164, 188, 146, 1),
                           decoration: TextDecoration.underline,
                         ),
                         recognizer: TapGestureRecognizer()

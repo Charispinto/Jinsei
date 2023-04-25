@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:new_age/pages/api.dart';
 import 'package:new_age/pages/choose_location.dart';
 import 'package:new_age/widgets/widgets.dart';
 
@@ -9,7 +10,7 @@ class MapScreen extends StatefulWidget {
 }
 
 class _MapScreenState extends State<MapScreen> {
-  LatLng _center = LatLng(37.42796133580664, -122.085749655962);
+  LatLng _center = LatLng(12.910412, 74.898098);
   Set<Marker> _markers = {};
 
   void _onMapCreated(GoogleMapController controller) {}
@@ -18,7 +19,7 @@ class _MapScreenState extends State<MapScreen> {
     print("Marker tapped: $position");
     print(position.latitude);
     print(position.longitude);
-    nextScreenReplace(context, PickLocation(latitude: position.latitude, longitude: position.longitude));
+    nextScreenReplace(context, ApiSerivce(lat: position.latitude, lon: position.longitude));
   }
 
   void _onMapTapped(LatLng position) {
