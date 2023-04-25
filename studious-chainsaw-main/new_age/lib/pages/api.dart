@@ -40,14 +40,20 @@ Future<String?> getData() async{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("api1 to get wind data")),
+      appBar: AppBar(title: Text("api1 to get wind data", 
+      style: TextStyle(color: Colors.black),
+      ),
+      backgroundColor: Color.fromRGBO(221, 255, 187, 1),
+      elevation: 0,
+
+      ),
 
       body: Center(
         child: Column(children: [   
           const SizedBox(height: 50,),   
           //dont touch this code 
           Text("$windspeed m/s",
-          style: TextStyle(
+          style: const TextStyle(
             fontWeight: FontWeight.bold,
             fontSize: 60,
             color: Colors.amber
@@ -64,18 +70,38 @@ Future<String?> getData() async{
              setState(() {
                windspeed;
              });
-            }, child: Text("get wind speed")),
+            }, child: Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10),
+                color: Colors.green
+                ),              
+              width: 100,
+              height: 50,
+              
+              child: const Padding(
+                padding: EdgeInsets.fromLTRB(0, 15, 0, 0),
+                child: Text("get wind speed",
+                style: TextStyle(
+                  color: Colors.black,
+                ),
+                ),
+              ),
+              )
+              ),
           ), 
       
          
       
           
           //dont touch this code
-          TextButton(onPressed: (){
-           nextScreenReplace(context, LandingPage());
-          },
-           child: Text("return back to map page"),
-           ),
+          Container(
+            
+            child: TextButton(onPressed: (){
+             nextScreenReplace(context, LandingPage());
+            },
+             child: Text("return back to map page"),
+             ),
+          ),
       
           //don't touch this code
           TextButton(onPressed: (){

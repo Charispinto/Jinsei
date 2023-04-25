@@ -59,7 +59,10 @@ class _HomePageState extends State<HomePage> {
                 child: ListView(
                   scrollDirection: Axis.horizontal,
                   children:  [
-                   MillInfo(millname: "Vertical mill",millinfo: "this is the info page\nwhich has basic info\ngod just kill me" , imagePath: "assets/vaxi.gif", page: ProfilePage())
+                   MillInfo(millname: "Vertical mill",millinfo: "this is the info page\nwhich has basic info\ngod just kill me" , imagePath: "assets/vaxi.gif", page: ProfilePage()),
+                   MillInfo(millname: "Horizontal", millinfo: "this is the info page\nwhich has basic info\ngod just kill me", imagePath: "assets/vaxi.gif", page: ProfilePage()),
+                   MillInfo(millname: "Horizontal", millinfo: "this is the info page\nwhich has basic info\ngod just kill me", imagePath: "assets/vaxi.gif", page: ProfilePage()),                 
+                   
                   ],
                 ),
               ),

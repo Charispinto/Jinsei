@@ -10,7 +10,6 @@ import '../helper/helper_function.dart';
 
 class LandingPage extends StatefulWidget {
   const LandingPage({super.key});
-
   @override
   State<LandingPage> createState() => _LandingPageState();
 }
@@ -170,7 +169,7 @@ class _LandingPageState extends State<LandingPage> {
               BottomNavigationBarItem(
                 icon: Icon(
                   Icons.home,
-                  color: Colors.grey,
+                  color: Color.fromARGB(255, 67, 160, 71),
                 ),
                 label: "home",
               ),
@@ -182,7 +181,7 @@ class _LandingPageState extends State<LandingPage> {
             ],
             type: BottomNavigationBarType.shifting,
             currentIndex: _selectedIndex,
-            selectedItemColor: Colors.grey,
+            selectedItemColor: Colors.green[900],
             onTap: _onItemTapped,
             elevation: 0,
           ),
