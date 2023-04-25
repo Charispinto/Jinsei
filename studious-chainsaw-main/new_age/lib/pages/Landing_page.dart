@@ -59,13 +59,13 @@ class _LandingPageState extends State<LandingPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       
-      appBar: AppBar(title: const Text("Solaris",
+      appBar: AppBar(title: const Text("EURUS",
       style: TextStyle(
-        color: Colors.black,
+        color: Colors.white,
       ),
       ),
       elevation: 0,
-       backgroundColor:Color.fromRGBO(221, 255, 187, 1),
+       backgroundColor:Color(0xff015A62),
       ),
 
        drawer: Drawer(    
@@ -163,20 +163,20 @@ class _LandingPageState extends State<LandingPage> {
             canvasColor: Colors.green[400]
           ),
           child: BottomNavigationBar(
-            backgroundColor: Color.fromARGB(255, 76, 175, 80),
+            backgroundColor: Colors.white,
                       
             items: const [
               BottomNavigationBarItem(
                 icon: Icon(
                   Icons.home,
-                  color: Color.fromARGB(255, 67, 160, 71),
+                  color:Color(0xff19907A),
                 ),
                 label: "home",
               ),
-              BottomNavigationBarItem(icon: Icon(Icons.map), label: "maps"),
+              BottomNavigationBarItem(icon: Icon(Icons.map,color:Color(0xff19907A),), label: "maps"),
               BottomNavigationBarItem(
-                icon: Icon(Icons.local_hospital),
-                label: "hospital",
+                icon: Icon(Icons.contact_page,color:Color(0xff19907A),),
+                label: "Contact",
               ),
             ],
             type: BottomNavigationBarType.shifting,

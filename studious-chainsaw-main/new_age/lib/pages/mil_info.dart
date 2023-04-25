@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../widgets/widgets.dart';
+import 'package:lottie/lottie.dart';
 
 class MillInfo extends StatefulWidget {
   late String millname;
@@ -25,12 +26,12 @@ class _MillInfoState extends State<MillInfo> {
                 padding: const EdgeInsets.all(8.0,),
                 child: Container(
                   width: 180,
-                  height: 230,                                       
+                  height: 160,
                   decoration:  BoxDecoration(
-                    border: Border.all(width: 8, color: Color.fromARGB(255, 165, 214, 167), ),
-                    color: Colors.green[200],
-                    borderRadius: BorderRadius.circular(12),                  
-                  ),   
+                    border: Border.all(width: 8, color: Color(0xff19906A), ),
+                    color: Color(0xff19906A),
+                    borderRadius: BorderRadius.circular(12),
+                  ),
 
                   
 
@@ -38,18 +39,20 @@ class _MillInfoState extends State<MillInfo> {
                     children:  [
                       ClipRRect(
                         borderRadius: BorderRadius.circular(12),
-                        child: Image.asset("${widget.imagePath}"),   
-
-                        ),    
-                      const SizedBox(height: 10,),                        
+                        child: Lottie.asset("${widget.imagePath}",
+                          height: 130,
+                          width: 130,
+                        ),
+                      ),
+                      const SizedBox(height: 10,),
                       Align(
                         alignment: Alignment.topLeft,
                         child: Text(widget.millname,
                         style: const TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.bold,
-                        
-                          ),                        
+
+                          ),
                         ),
                       ),
                       const SizedBox(height: 5,),
@@ -58,7 +61,7 @@ class _MillInfoState extends State<MillInfo> {
                         child: Text(widget.millinfo,
                         style: const TextStyle(
                           fontSize: 14,
-                          color: Color.fromARGB(255, 67, 160, 71),
+                          color: Colors.white,
                         ),
                         ),
                       ),
@@ -77,7 +80,7 @@ class _MillInfoState extends State<MillInfo> {
                             },
                              child: const Text("Read more",
                              style: TextStyle(
-                              color: Color.fromARGB(255, 27, 94, 32)
+                              color: Colors.black,
                              ),
                              ),
                             ),

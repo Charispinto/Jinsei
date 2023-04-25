@@ -9,9 +9,28 @@ import 'package:lottie/lottie.dart';
 
 
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+
+  String userName = '';
+
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    HelperFunctions.getUserName().then((value) {
+      setState(() {
+        userName = value!;
+      });
+    }
+    );
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,7 +47,7 @@ class HomePage extends StatelessWidget {
                 child: Container(
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10.0),
-                    gradient: LinearGradient(
+                    gradient: const LinearGradient(
                       end: Alignment.topLeft,
                       begin: Alignment(0.8, 1),
                       colors: <Color>[
@@ -54,10 +73,10 @@ class HomePage extends StatelessWidget {
                           Expanded(
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
-                              children: const [
+                              children: [
                                 Text(
-                                  'Welcome Joywin!!',
-                                  style: TextStyle(
+                                  'Welcome $userName!',
+                                  style: const TextStyle(
                                     fontSize: 24,
                                     fontFamily: 'poppins',
                                     fontWeight: FontWeight.bold,
@@ -90,12 +109,12 @@ class HomePage extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 16,),
+            SizedBox(height: 40,),
             Container(
               height: 80,
               width: 200,
               decoration: BoxDecoration(
-                color: Colors.orangeAccent,
+                color: Color(0xffFFB84C),
                 borderRadius: BorderRadius.circular(10),
               ),
               child: TextButton(
@@ -107,23 +126,29 @@ class HomePage extends StatelessWidget {
                 onPressed: () {},
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    const Text('Lets Analyse'),
-                    const SizedBox(width: 10),
-                    const Icon(Icons.arrow_forward),
+                  children: const [
+                    Text('Get Started'),
+                    SizedBox(width: 10),
+                    Icon(Icons.arrow_forward),
                   ],
                 ),
               ),
             ),
             const SizedBox(
-              height: 16,
+              height: 40,
             ),
-            Text('Types of windwill',
-          
-            style: TextStyle(
-              
-              color: Colors.green
+            Container(
+              alignment: Alignment.topLeft,
+              child: const Text(' Explore new facts!',
+                style: TextStyle(
+                  color: Colors.black,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 30,
+              ),
+              ),
             ),
+            const SizedBox(
+              height: 12,
             ),
             Container(
               height: 350,
@@ -131,9 +156,9 @@ class HomePage extends StatelessWidget {
                 child: ListView(
                   scrollDirection: Axis.horizontal,
                   children:  [
-                    MillInfo(millname: "Vertical mill",millinfo: "this is the info page\nwhich has basic info\ngod just kill me" , imagePath: "assets/vaxi.gif", page: ProfilePage()),
-                    MillInfo(millname: "Vertical mill",millinfo: "this is the info page\nwhich has basic info\ngod just kill me" , imagePath: "assets/vaxi.gif", page: ProfilePage()),
-                    MillInfo(millname: "Vertical mill",millinfo: "this is the info page\nwhich has basic info\ngod just kill me" , imagePath: "assets/vaxi.gif", page: ProfilePage()),            
+                    MillInfo(millname: "Wind power",millinfo: "The total installed wind power capacity was 42.633 GW" , imagePath: "assets/wind-power.json", page: ProfilePage()),
+                    MillInfo(millname: "Disadvantages",millinfo: "Wind's variability makes consistent electricity generation challenging" , imagePath: "assets/disadvantages.json", page: ProfilePage()),
+                    MillInfo(millname: "Facts",millinfo: "Wind turbines can generate electricity for up to 70% to 90% of the time" , imagePath: "assets/facts.json", page: ProfilePage()),
                   ],
                 ),
               ),
