@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:new_age/pages/HomePage.dart';
 import 'package:new_age/pages/Landing_page.dart';

@@ -80,7 +80,7 @@ class _MillInfoState extends State<MillInfo> {
                             },
                              child: const Text("Read more",
                              style: TextStyle(
-                              color: Colors.black,
+                              color: Colors.red,
                              ),
                              ),
                             ),

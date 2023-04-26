@@ -4,6 +4,7 @@ import 'package:new_age/pages/login_page.dart';
 import 'package:new_age/pages/maptest_page.dart';
 import 'package:new_age/pages/profile_page.dart';
 import 'package:new_age/widgets/widgets.dart';
+import 'contact.dart';
 
 import '../helper/helper_function.dart';
 
@@ -17,10 +18,10 @@ class LandingPage extends StatefulWidget {
 class _LandingPageState extends State<LandingPage> {
   int _selectedIndex = 0;
 
-  static List<Widget> _widgetOption = <Widget>[   
+  static List<Widget> _widgetOption = <Widget>[
     const HomePage(),// this is perfect no need to change
     MapScreen(),// this is done temp it has to changed to map soon
-    const LoginPage()// this has to be changes to list of hospital            
+    ContactPage()// this has to be changes to list of hospital
   ];
 
   void _onItemTapped(int index){
@@ -58,7 +59,7 @@ class _LandingPageState extends State<LandingPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
+
       appBar: AppBar(title: const Text("EURUS",
       style: TextStyle(
         color: Colors.white,
@@ -160,7 +161,7 @@ class _LandingPageState extends State<LandingPage> {
       
         bottomNavigationBar: Theme(
           data: ThemeData(
-            canvasColor: Colors.green[400]
+            canvasColor: Colors.white,
           ),
           child: BottomNavigationBar(
             backgroundColor: Colors.white,

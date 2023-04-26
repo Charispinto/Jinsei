@@ -6,7 +6,8 @@ import 'package:new_age/pages/mil_info.dart';
 import 'package:new_age/pages/profile_page.dart';
 import '../widgets/widgets.dart';
 import 'package:lottie/lottie.dart';
-
+import 'readmore.dart';
+import 'contact.dart';
 
 
 class HomePage extends StatefulWidget {
@@ -123,7 +124,7 @@ class _HomePageState extends State<HomePage> {
                   padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 16.0),
                   textStyle: const TextStyle(fontSize: 20),
                 ),
-                onPressed: () {},
+                onPressed: () => nextScreenReplace(context, MapScreen()),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: const [
@@ -156,9 +157,9 @@ class _HomePageState extends State<HomePage> {
                 child: ListView(
                   scrollDirection: Axis.horizontal,
                   children:  [
-                    MillInfo(millname: "Wind power",millinfo: "The total installed wind power capacity was 42.633 GW" , imagePath: "assets/wind-power.json", page: ProfilePage()),
-                    MillInfo(millname: "Disadvantages",millinfo: "Wind's variability makes consistent electricity generation challenging" , imagePath: "assets/disadvantages.json", page: ProfilePage()),
-                    MillInfo(millname: "Facts",millinfo: "Wind turbines can generate electricity for up to 70% to 90% of the time" , imagePath: "assets/facts.json", page: ProfilePage()),
+                    MillInfo(millname: "Wind power",millinfo: "The total installed wind power capacity was 42.633 GW" , imagePath: "assets/wind-power.json", page: ReadMore(keys: '2', heading: "Energy by Wind-power",)),
+                    MillInfo(millname: "Why us",millinfo: "Wind's variability makes consistent electricity generation challenging" , imagePath: "assets/disadvantages.json", page: ReadMore(keys: "1",heading: "Why Us?",)),
+                    MillInfo(millname: "Facts",millinfo: "Wind turbines can generate electricity for up to 70% to 90% of the time" , imagePath: "assets/facts.json", page: ReadMore(keys: '3',heading:"Facts on Windmill")),
                   ],
                 ),
               ),
