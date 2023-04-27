@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:new_age/pages/HomePage.dart';
+import 'package:new_age/pages/Landing_page.dart';
 import 'package:new_age/pages/api.dart';
 import 'package:new_age/pages/api2.dart';
 import 'package:new_age/pages/login_page.dart';
@@ -56,11 +57,7 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return  MaterialApp(      
-     debugShowCheckedModeBanner: false,
-     theme: ThemeData(
-      brightness: Brightness.dark,
-      primaryColor: Colors.black87,
-     ),
+     debugShowCheckedModeBanner: false,    
      home:  LoginPage(),
     );
   }

@@ -10,7 +10,6 @@ import '../helper/helper_function.dart';
 
 class LandingPage extends StatefulWidget {
   const LandingPage({super.key});
-
   @override
   State<LandingPage> createState() => _LandingPageState();
 }
@@ -59,9 +58,17 @@ class _LandingPageState extends State<LandingPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Solaris")),
+      
+      appBar: AppBar(title: const Text("EURUS",
+      style: TextStyle(
+        color: Colors.white,
+      ),
+      ),
+      elevation: 0,
+       backgroundColor:Color(0xff015A62),
+      ),
 
-       drawer: Drawer(
+       drawer: Drawer(    
           backgroundColor:const Color.fromARGB(225, 255, 255, 255),
           child: ListView(
             padding: const EdgeInsets.symmetric(vertical: 50),
@@ -151,26 +158,33 @@ class _LandingPageState extends State<LandingPage> {
 
 
       
-        bottomNavigationBar: BottomNavigationBar(
-          items: const [
-            BottomNavigationBarItem(
-              icon: Icon(
-                Icons.home,
-                color: Colors.grey,
+        bottomNavigationBar: Theme(
+          data: ThemeData(
+            canvasColor: Colors.green[400]
+          ),
+          child: BottomNavigationBar(
+            backgroundColor: Colors.white,
+                      
+            items: const [
+              BottomNavigationBarItem(
+                icon: Icon(
+                  Icons.home,
+                  color:Color(0xff19907A),
+                ),
+                label: "home",
               ),
-              label: "home",
-            ),
-            BottomNavigationBarItem(icon: Icon(Icons.map), label: "maps"),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.local_hospital),
-              label: "hospital",
-            ),
-          ],
-          type: BottomNavigationBarType.shifting,
-          currentIndex: _selectedIndex,
-          selectedItemColor: Colors.grey,
-          onTap: _onItemTapped,
-          elevation: 0,
+              BottomNavigationBarItem(icon: Icon(Icons.map,color:Color(0xff19907A),), label: "maps"),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.contact_page,color:Color(0xff19907A),),
+                label: "Contact",
+              ),
+            ],
+            type: BottomNavigationBarType.shifting,
+            currentIndex: _selectedIndex,
+            selectedItemColor: Colors.green[900],
+            onTap: _onItemTapped,
+            elevation: 0,
+          ),
         ),
 
 
@@ -180,6 +194,6 @@ class _LandingPageState extends State<LandingPage> {
 
 
       );    
-  
+
   }
 }
