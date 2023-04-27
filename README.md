@@ -1,6 +1,9 @@
 # EURUS
 EURUS is an application that helps you determine whether it's feasible to have a windmill in a particular location or not. It uses logistic regression as a machine learning model to predict the outcome.
 
+## About
+EURUS was created during the 24-hour HacktoFuture hackathon by Charis Pinto, Samwin Pereira, and Joywin Bennis. The hackathon was organized by EDGK and SJEC.
+
 ## Technologies Used
 EURUS is built with the following technologies:
 
